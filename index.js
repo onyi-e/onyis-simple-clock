@@ -22,3 +22,22 @@ setInterval(() => {
     hourElement.innerHTML = `0${hour}`;
   }
 }, 1000);
+
+function tellTime() {
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  let date = new Date();
+  let day = date.getDay();
+  let month = date.getMonth();
+  let todaysdate = date.getDate();
+  let year = date.getFullYear();
+  //  console.log(date.toLocaleString("default", { month: "long" }));
+  console.log(date.toLocaleDateString("default", options));
+  let updatedDate = document.querySelector("#date");
+  updatedDate.innerHTML = date.toLocaleDateString("default", options);
+}
+tellTime();
